@@ -10,7 +10,7 @@
 	import type { poll, proposal } from './interface';
 	import { getProposals } from '$lib/Generic/AI';
 	import { proposalCreate as proposalCreateBlockchain } from '$lib/Blockchain_v1_Ethereum/javascript/pollsBlockchain';
-	import { proposalCreate as proposalCreateBlockchain_v2 } from '$lib/Blockchain_v2_CrossChain/javascript/pollsBlockchain'; // new v2 import
+	// import { proposalCreate as proposalCreateBlockchain_v2 } from '$lib/Blockchain_v2_CrossChain/javascript/pollsBlockchain'; // new v2 import
 	import RadioButtons from '$lib/Generic/RadioButtons.svelte';
 	import FileUploads from '$lib/Generic/FileUploads.svelte';
 	import { ErrorHandlerStore } from '$lib/Generic/ErrorHandlerStore';
@@ -37,7 +37,7 @@
 		if (env.PUBLIC_BLOCKCHAIN_INTEGRATION === 'TRUE' && blockchain && poll.blockchain_id)
 		// use v2  if PUBLIC_BLOCKCHAIN_VERSION === 'v2'
 			if (env.PUBLIC_BLOCKCHAIN_VERSION === 'v2') {
-				blockchain_id = await proposalCreateBlockchain_v2(poll.blockchain_id, title);
+				// blockchain_id = await proposalCreateBlockchain_v2(poll.blockchain_id, title);
 			} else { 
 				blockchain_id = await proposalCreateBlockchain(poll.blockchain_id, title);
 			}

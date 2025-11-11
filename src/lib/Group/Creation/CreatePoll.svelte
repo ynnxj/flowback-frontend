@@ -9,7 +9,7 @@
 	import RadioButtons from '$lib/Generic/RadioButtons.svelte';
 	import { goto } from '$app/navigation';
 	import { createPoll as createPollBlockchain } from '$lib/Blockchain_v1_Ethereum/javascript/pollsBlockchain';
-	import { createPoll as createPollBlockchain_v2 } from '$lib/Blockchain_v2_CrossChain/javascript/pollsBlockchain';
+	// import { createPoll as createPollBlockchain_v2 } from '$lib/Blockchain_v2_CrossChain/javascript/pollsBlockchain';
 	import FileUploads from '$lib/Generic/FileUploads.svelte';
 	import AdvancedTimeSettings from './AdvancedTimeSettings.svelte';
 	import RadioButtons2 from '$lib/Generic/RadioButtons2.svelte';
@@ -75,7 +75,7 @@
 		if (env.PUBLIC_BLOCKCHAIN_INTEGRATION === 'TRUE' && pushToBlockchain) {
 			 // use v2  if PUBLIC_BLOCKCHAIN_VERSION === 'v2'
 		if (env.PUBLIC_BLOCKCHAIN_VERSION === 'v2') {
-		    blockchain_id = await createPollBlockchain_v2(Number(groupId), title);
+		    // blockchain_id = await createPollBlockchain_v2(Number(groupId), title);
 		} else {
 				blockchain_id = await createPollBlockchain(Number(groupId), title);
 				}
